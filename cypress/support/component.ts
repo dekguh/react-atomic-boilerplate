@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-namespace */
+import React from 'react'
 // ***********************************************************
 // This example support/component.ts is processed and
 // loaded automatically before your test files.
@@ -20,6 +22,7 @@ import './commands'
 // require('./commands')
 
 import { mount } from 'cypress/react18'
+import MainWrapper from '@/wrapper/MainWrapper'
 
 // Augment the Cypress namespace to include type definitions for
 // your custom command.
@@ -33,7 +36,10 @@ declare global {
   }
 }
 
-Cypress.Commands.add('mount', mount)
+Cypress.Commands.add('mount', (component : React.ReactNode, options) => {
+  const wrapped = React.createElement(MainWrapper, null, component)
+  return mount(wrapped, options)
+})
 
 // Example use:
 // cy.mount(<MyComponent />)
