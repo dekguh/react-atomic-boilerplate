@@ -11,7 +11,7 @@ import MapIcon from '@mui/icons-material/Map'
 import colors from '@/constants/colors'
 import { hexToRgb } from '@/utils/string'
 
-it('should can add a icon', () => {
+it('should can add a icon & rendered', () => {
   cy.mount(<Fab><MapIcon fontSize='small'/></Fab>)
   cy.get('button').children().get('[data-testid="MapIcon"]')
 })

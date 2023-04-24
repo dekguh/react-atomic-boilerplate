@@ -4,7 +4,7 @@ import React from 'react'
 import FormControl from '.'
 import TextField from '@/components/atoms/input/TextField'
 
-it('it should can add FormControl props [fullWidth]', () => {
+it('it should can add FormControl props [fullWidth] & rendered', () => {
   cy.mount(<FormControl
     controlProps={{
       fullWidth: true,

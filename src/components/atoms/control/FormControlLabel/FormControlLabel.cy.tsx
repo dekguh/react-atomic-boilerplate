@@ -6,7 +6,7 @@ import Checkbox from '@/components/atoms/input/Checkbox'
 import Radio from '@/components/atoms/input/Radio'
 import Switch from '@/components/atoms/input/Switch'
 
-it('it should can add radio', () => {
+it('it should can add radio & rendred', () => {
   cy.mount(<FormControlLabel
     label='label radio'
     control={<Radio />}
@@ -15,7 +15,7 @@ it('it should can add radio', () => {
   cy.get('input.PrivateSwitchBase-input').click()
 })
 
-it('it should can add checkbox', () => {
+it('it should can add checkbox & rendered', () => {
   cy.mount(<FormControlLabel
     label='label checkbox'
     control={<Checkbox />}
@@ -24,7 +24,7 @@ it('it should can add checkbox', () => {
   cy.get('input.PrivateSwitchBase-input').click()
 })
 
-it('it should can add switch', () => {
+it('it should can add switch & rendered', () => {
   cy.mount(<FormControlLabel
     label='label switch'
     control={<Switch />}
