@@ -12,8 +12,6 @@ describe('Google', () => {
       await page.screenshot({ path: './homepage_screenshot.jpg'})
     } catch(error) {
       console.log('error')
-    } finally {
-      await browser.close()
     }
   })
 })
