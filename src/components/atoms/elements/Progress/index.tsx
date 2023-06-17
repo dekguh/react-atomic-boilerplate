@@ -8,9 +8,9 @@ import { styled } from '@mui/material/styles'
 // TYPES
 import { IProgressProps } from './types'
 
-const StyledCircularProgress = styled(CircularProgressMUI)<CircularProgressProps>()
+const StyledCircularProgress = styled(CircularProgressMUI)<CircularProgressProps>({})
 
-const StyledLinearProgress = styled(LinearProgressMUI)<LinearProgressProps>()
+const StyledLinearProgress = styled(LinearProgressMUI)<LinearProgressProps>({})
 
 const Progress : React.FC<IProgressProps> = (props) => {
   const { circularProps, linearProps, type } = props
