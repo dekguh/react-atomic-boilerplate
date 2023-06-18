@@ -25,7 +25,8 @@
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "tss-react": "^4.8.6"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.0",
