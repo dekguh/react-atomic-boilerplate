@@ -9,6 +9,9 @@ import '@fontsource/roboto/700.css'
 // MUIS
 import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles'
 
+// STATES & REDUX
+import { wrapper } from '@/store/store'
+
 // THEME
 import theme from '../styles/theme'
 
@@ -22,4 +25,4 @@ const MainWrapper = ({ children } : {children: JSX.Element | React.ReactNode;}) 
   )
 }
 
-export default MainWrapper
+export default wrapper.withRedux(MainWrapper)
