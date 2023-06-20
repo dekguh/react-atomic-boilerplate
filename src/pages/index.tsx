@@ -3,8 +3,13 @@ import React from 'react'
 // NEXT
 import Head from 'next/head'
 import { Button, Typography } from '@mui/material'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectUserState, setDataState } from '@/store/slice/userSlice'
 
 export default function Home() {
+  const userState = useSelector(selectUserState)
+  const dispatch = useDispatch()
+  
   return (
     <>
       <Head>
@@ -14,9 +19,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
     
-      <Typography variant='h1'>test judul</Typography>
+      <Typography variant='h1'>{userState?.data?.login ? 'loged in' : 'loged out'}</Typography>
 
-      <Button variant='outlined'>test</Button>
+      <Button onClick={() => dispatch(setDataState({ login: true }))} variant='outlined'>login</Button>
     </>
   )
 }
