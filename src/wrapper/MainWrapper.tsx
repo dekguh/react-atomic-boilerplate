@@ -8,12 +8,17 @@ import '@fontsource/roboto/700.css'
 
 // MUIS
 import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles'
+// if using MUI PRO
+// import { LicenseInfo } from '@mui/x-license-pro'
 
 // STATES & REDUX
 import { wrapper } from '@/store/store'
 
 // THEME
-import theme from '../styles/theme'
+import theme from '@/styles/theme'
+
+// if using MUI PRO
+// LicenseInfo.setLicenseKey(process.env.MUI_PRO_X_LICENSE)
 
 const MainWrapper = ({ children } : {children: JSX.Element | React.ReactNode;}) : JSX.Element | null => {
   return (

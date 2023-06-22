@@ -6,7 +6,7 @@ const makeStore = () => configureStore({
   reducer: {
     [userSlice.name]: userSlice.reducer
   },
-  devTools: true,
+  devTools: process.env.NODE_ENV === 'development' ? true : false,
 })
 
 export type AppStore = ReturnType<typeof makeStore>
