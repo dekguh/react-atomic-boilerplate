@@ -1,7 +1,7 @@
 import React from 'react'
 
 // STORYBOOK
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 
 // COMPONENTS
 import Typography from '.'
@@ -16,9 +16,9 @@ export default {
       }
     }
   }
-} as ComponentMeta<typeof Typography>
+} as Meta<typeof Typography>
 
-const Story : ComponentStory<typeof Typography> = (args) => <Typography {...args}/>
+const Story : StoryFn<typeof Typography> = (args) => <Typography {...args}/>
 
 // HEADING
 export const Heading = Story.bind({})
