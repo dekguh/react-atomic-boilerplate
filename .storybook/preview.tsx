@@ -1,4 +1,6 @@
-import type { Preview } from "@storybook/react";
+import React from 'react'
+import type { Preview } from '@storybook/react'
+import MainWrapper from '../src/wrapper/MainWrapper'
 
 const preview: Preview = {
   parameters: {
@@ -10,6 +12,11 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <MainWrapper><Story /></MainWrapper>
+    )
+  ]
 };
 
 export default preview;
