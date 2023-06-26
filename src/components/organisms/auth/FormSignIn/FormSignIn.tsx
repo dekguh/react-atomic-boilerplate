@@ -60,7 +60,7 @@ const FormSignIn : React.FC<IFormSignIn> = (props) => {
   }
 
   return (
-    <CardForm onSubmit={handleFormSubmit} className={classes.cardWrapper}>
+    <CardForm onSubmit={handleFormSubmit} className={classes.cardWrapper} data-testid='formSignInId'>
       <Stack className={classes.cardHeader}>
         <Typography variant='h4' className={classes.cardTitle}>Sign In</Typography>
       </Stack>
@@ -74,7 +74,7 @@ const FormSignIn : React.FC<IFormSignIn> = (props) => {
         >
           <TextField
             type='text' size='medium' error={Boolean(messageError?.email)}
-            value={paramsObject?.email} label='Email'
+            value={paramsObject?.email} label='Email' inputProps={{ 'data-testid': 'inputEmailId' }}
             onChange={event => handleParamsChange('email', event.target.value)}
           />
         </FormControl>
@@ -87,13 +87,13 @@ const FormSignIn : React.FC<IFormSignIn> = (props) => {
         >
           <TextField
             type='password' size='medium' error={Boolean(messageError?.password)}
-            value={paramsObject?.password} label='Password'
+            value={paramsObject?.password} label='Password' inputProps={{ 'data-testid': 'inputPasswordId' }}
             onChange={event => handleParamsChange('password', event.target.value)}
           />
         </FormControl>
 
         <FormControl>
-          <Button variant='contained' type='submit'>Sign in</Button>
+          <Button variant='contained' type='submit' data-testid='buttonSubmitId'>Sign in</Button>
         </FormControl>
 
         <Typography className={classes.textRouting}>

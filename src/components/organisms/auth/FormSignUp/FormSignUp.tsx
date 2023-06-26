@@ -68,7 +68,7 @@ const FormSignUp : React.FC<IFormSignUp> = (props) => {
   }
 
   return (
-    <CardForm onSubmit={handleFormSubmit} className={classes.cardWrapper}>
+    <CardForm onSubmit={handleFormSubmit} className={classes.cardWrapper} data-testid='formSignUpId'>
       <Stack className={classes.cardHeader}>
         <Typography variant='h4' className={classes.cardTitle}>Sign Up</Typography>
       </Stack>
@@ -82,7 +82,7 @@ const FormSignUp : React.FC<IFormSignUp> = (props) => {
         >
           <TextField
             type='text' size='medium' error={Boolean(messageError?.email)}
-            value={paramsObject?.email} label='Email'
+            value={paramsObject?.email} label='Email' inputProps={{ 'data-testid': 'inputEmailId' }}
             onChange={event => handleParamsChange('email', event.target.value)}
           />
         </FormControl>
@@ -95,7 +95,7 @@ const FormSignUp : React.FC<IFormSignUp> = (props) => {
         >
           <TextField
             type='password' size='medium' error={Boolean(messageError?.password)}
-            value={paramsObject?.password} label='Password'
+            value={paramsObject?.password} label='Password' inputProps={{ 'data-testid': 'inputPasswordId' }}
             onChange={event => handleParamsChange('password', event.target.value)}
           />
         </FormControl>
@@ -108,13 +108,13 @@ const FormSignUp : React.FC<IFormSignUp> = (props) => {
         >
           <TextField
             type='password' size='medium' error={Boolean(messageError?.password)}
-            value={paramsObject?.rePassword} label='Confirm Password'
+            value={paramsObject?.rePassword} label='Confirm Password' inputProps={{ 'data-testid': 'inputRePasswordId' }}
             onChange={event => handleParamsChange('rePassword', event.target.value)}
           />
         </FormControl>
 
         <FormControl>
-          <Button variant='contained' type='submit'>Sign up</Button>
+          <Button variant='contained' type='submit' data-testid='buttonSubmitId'>Sign up</Button>
         </FormControl>
 
         <Typography className={classes.textRouting}>
