@@ -1,4 +1,5 @@
 import React, { FormEvent, useState } from 'react'
+import Link from 'next/link'
 
 // COMPONENTS
 import CardForm from '@/components/atoms/elements/CardForm'
@@ -94,6 +95,10 @@ const FormSignIn : React.FC<IFormSignIn> = (props) => {
         <FormControl>
           <Button variant='contained' type='submit'>Sign in</Button>
         </FormControl>
+
+        <Typography className={classes.textRouting}>
+          dont have an account? <Link href='/sign-up'>sign up</Link>
+        </Typography>
       </Stack>
     </CardForm>
   )
