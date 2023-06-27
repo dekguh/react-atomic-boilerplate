@@ -1,7 +1,7 @@
 import React from 'react'
 
 // COMPONENTS
-import FormSignIn from './FormSignIn'
+import FormSignIn from '.'
 
 // STORYBOOK
 import { Meta, StoryFn } from '@storybook/react'

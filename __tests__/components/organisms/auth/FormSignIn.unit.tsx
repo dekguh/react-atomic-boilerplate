@@ -1,7 +1,7 @@
 import React from 'react'
 import { screen, render, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import FormSignIn from '@/components/organisms/auth/FormSignIn/FormSignIn'
+import FormSignIn from '@/components/organisms/auth/FormSignIn'
 
 describe('FormSignIn unit testing', () => {
   test('FormSignIn is rendered', () => {
