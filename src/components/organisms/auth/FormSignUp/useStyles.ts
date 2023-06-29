@@ -5,6 +5,7 @@ import { makeStyles } from 'tss-react/mui'
 const useStyles = makeStyles()((theme) => ({
   cardWrapper: {
     borderRadius: 4,
+    width: 400
   },
   cardHeader: {
     padding: 16,
