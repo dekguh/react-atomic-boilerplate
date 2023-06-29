@@ -7,6 +7,7 @@ import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 
 // MUIS
+import CssBaseline from '@mui/material/CssBaseline'
 import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles'
 // if using MUI PRO
 // import { LicenseInfo } from '@mui/x-license-pro'
@@ -24,6 +25,7 @@ const MainWrapper = ({ children } : {children: JSX.Element | React.ReactNode;}) 
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         {children}
       </ThemeProvider>
     </StyledEngineProvider>
