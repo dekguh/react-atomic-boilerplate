@@ -1,7 +1,8 @@
 /** @type {import('jest-environment-puppeteer').JestPuppeteerConfig} */
 module.exports = {
   launch: {
-    headless: false,
+    headless: 'new',
+    dumpio: true,
   },
   browser: 'chromium',
   browserContext: 'default',
@@ -9,6 +10,6 @@ module.exports = {
     command: 'npm start',
     port: 3000,
     launchTimeout: 10000,
-    debug: true
-  }
+    debug: true,
+  },
 }
