@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 describe('Sign in page e2e testing', () => {
   beforeAll(async () => {
     await page.setViewport({ width: 1920, height: 1080 })
-    await page.goto('http://localhost:3000/sign-in')
+    await page.goto('http://localhost:4444/sign-in')
   })
 
   it('should page rendered correctly', async () => {
