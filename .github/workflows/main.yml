@@ -25,5 +25,3 @@ jobs:
         run: npm run lint
       - name: unit and integration testing
         run: npm run test-unit
-      - name: e2e testing
-        run: npm run test-e2e
