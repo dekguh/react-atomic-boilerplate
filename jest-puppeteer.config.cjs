@@ -8,6 +8,9 @@ const confServer = {
 const confLaunch = {
   headless: 'new',
   ignoreDefaultArgs: ['--disable-extensions'],
+  protocol: 'http',
+  usedPortAction: 'kill',
+  launchTimeout: 240000,
   args: [
     '--ignore-certificate-errors',
     '--no-sandbox',
