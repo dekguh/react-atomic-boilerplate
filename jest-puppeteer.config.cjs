@@ -21,7 +21,7 @@ const confLaunch = {
 }
 
 // CI true = CI on github actions
-module.exports = process.env.CI ? {
+module.exports = {
   launch: confLaunch,
   server: confServer
-} : { launch: confLaunch }
+}
