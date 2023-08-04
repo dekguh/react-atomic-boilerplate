@@ -7,6 +7,9 @@ on:
 jobs:
   build_test:
     runs-on: ubuntu-latest
+    container: lironavon/docker-puppeteer-container:14.16.0
+    env:
+      CI: true
     strategy:
       matrix:
         node-version: [18.x]
