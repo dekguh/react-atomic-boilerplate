@@ -2,15 +2,15 @@
 
 const confServer = {
   command: 'npm run start',
-  port: 9999
+  protocol: 'http',
+  usedPortAction: 'kill',
+  launchTimeout: 240000,
+  port: 9999,
 }
 
 const confLaunch = {
   headless: 'new',
   ignoreDefaultArgs: ['--disable-extensions'],
-  protocol: 'http',
-  usedPortAction: 'kill',
-  launchTimeout: 240000,
   args: [
     '--ignore-certificate-errors',
     '--no-sandbox',
