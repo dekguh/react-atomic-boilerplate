@@ -2,7 +2,7 @@
 
 const confServer = {
   command: 'npm run start',
-  protocol: 'http',
+  protocol: null,
   usedPortAction: 'kill',
   launchTimeout: 240000,
   port: 9999,
