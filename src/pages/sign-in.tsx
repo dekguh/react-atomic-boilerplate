@@ -1,17 +1,10 @@
 import React from 'react'
 
 // COMPONENTS
-import AuthLayout from '@/components/layouts/AuthLayout'
-import FormSignIn from '@/components/organisms/auth/FormSignIn'
+import SignInPage from '@/components/pages/SignInPage'
 
 const SignIn = () => {
-  return (
-    <AuthLayout>
-      <FormSignIn
-        getParamsObject={() => null}
-      />
-    </AuthLayout>
-  )
+  return (<SignInPage />)
 }
 
 export default SignIn
