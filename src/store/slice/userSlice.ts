@@ -7,7 +7,7 @@ export interface IUserState {
   data?: {[key: string]: number | string | Array<any> | undefined};
 }
 
-const initialState: IUserState = {
+export const initialState: IUserState = {
   data: {}
 }
 
