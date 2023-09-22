@@ -1,6 +1,7 @@
 /**
  * @see https://redux-toolkit.js.org/rtk-query/usage/customizing-queries#automatic-re-authorization-by-extending-fetchbasequery
  * @see https://redux-toolkit.js.org/rtk-query/api/fetchBaseQuery#setting-default-headers-on-requests
+ * example api using https://dummyjson.com/docs/auth
  */
 
 // LIB
@@ -35,7 +36,7 @@ export const baseQueryWithRefreshToken : BaseQueryFn<
 
       try {
         // process refresh token here
-        const responseRefreshToken = true
+        const responseRefreshToken = false
         if (responseRefreshToken) {
           // update token
           api.dispatch(userTokenAct('token'))
