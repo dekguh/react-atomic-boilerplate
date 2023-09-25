@@ -1,5 +1,6 @@
 import React from 'react'
 import Stack from '@mui/material/Stack'
+import SnackbarLayout from './SnackbarLayout'
 
 const AuthLayout = (props : { children: JSX.Element | React.ReactNode }) => {
   const { children } = props
@@ -9,7 +10,11 @@ const AuthLayout = (props : { children: JSX.Element | React.ReactNode }) => {
       alignItems='center'
       justifyContent='center'
       height='100vh'
-    >{children}</Stack>
+    >
+      <SnackbarLayout>
+        {children}
+      </SnackbarLayout>
+    </Stack>
   )
 }
 
