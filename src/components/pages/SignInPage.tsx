@@ -8,6 +8,7 @@ import FormSignIn from '@/components/organisms/auth/FormSignIn'
 // REDUX
 import { useDispatch } from 'react-redux'
 import { userIsAuthAct, userTokenAct } from '@/store/slice/authSlice'
+import { callSnackbar } from '@/store/slice/snackbarSlice'
 
 // SERVICES
 import { useUserLoginMutation } from '@/services/authService'
@@ -17,18 +18,22 @@ const SignInPage = () => {
   const [proccessAuth] = useUserLoginMutation()
 
   const handleLoginSubmit = async (values : { [key: string]: string | number | boolean; }) => {
-    const response = await proccessAuth({
-      username: values.email,
-      password: values.password
-    }).unwrap() as { [key: string]: string | number | boolean; }
+    try {
+      const response = await proccessAuth({
+        username: values.email,
+        password: values.password
+      }).unwrap() as { [key: string]: string | number | boolean; }
 
-    if (response?.status === 400) {
-      console.log('failed')
-    } else if (response?.token) {
-      console.log('success')
       dispatch(userTokenAct(response?.token))
       dispatch(userIsAuthAct(true))
       Router.push('/')
+    } catch (error) {
+      dispatch(callSnackbar({
+        severity: 'error',
+        title: 'oops!',
+        message: 'failed login, please check your email or password',
+        isOpen: true,
+      }))
     }
   }
 
