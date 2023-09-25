@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 import { userLogoutAct } from '@/store/slice/authSlice'
 
 // COMPONENTS
-import Button from '../atoms/control/Button'
+import Button from '../../atoms/control/Button'
 
 const HomePage = () => {
   const dispatch = useDispatch()

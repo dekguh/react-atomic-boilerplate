@@ -1,7 +1,7 @@
 import React from 'react'
 
 // COMPONENTS
-import HomePage from '@/components/pages/HomePage'
+import HomePage from '@/components/pages/Home/HomePage'
 
 // NEXT
 import Head from 'next/head'
