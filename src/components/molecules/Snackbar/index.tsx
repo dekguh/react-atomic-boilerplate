@@ -33,7 +33,7 @@ const Snackbar : React.FC<iSnackbarProps> = (props) => {
       }}
       TransitionComponent={SlideTransition}
     >
-      <Box maxWidth='400px'>
+      <Box maxWidth='400px' data-testid='snackbarNotifId'>
         <Alert
           alertProps={{
             severity: severity,
