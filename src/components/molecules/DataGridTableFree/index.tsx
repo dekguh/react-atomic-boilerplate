@@ -20,11 +20,23 @@ import { IDataGridTableFreeProps, TTableColumn } from './types'
 import { FilterAndSortComponent, handleFilterChange } from './utils'
 
 /**
- * to-do feature
- * input filter on header column (done)
- * show only selected column (done)
- * button sorting on header column (done)
- * mode filter (done)
+ * @param dataGridProps is for pass a data grid props
+ * @param modeFilter is for active mode filter on header column (search, etc)
+ * @param showSorting is for active sort filter on header column
+ * @param initColumns table header column
+ * @param initRows table data
+ * @param selectedColumns is for showing only selected column ([field: name, field: name])
+ * @param dataFilters is for filtering column
+ * @param setDataFilters is for set filtering column
+ * @param pageSize total show item per page
+ * @param setPageSize for set total show item per page
+ * @param currentPage show current page
+ * @param setCurrentPage set current page
+ * @param sortOn current column on sort
+ * @param setSortOn set current column on sort
+ * @param sortModel current model sort (asc/desc/none)
+ * @param setSortModel set current model sort
+ * @param filterOnApi mode filter sort from api
  */
 const DataGridTableFree : React.FC<IDataGridTableFreeProps> = (props) => {
   const {
@@ -42,14 +54,15 @@ const DataGridTableFree : React.FC<IDataGridTableFreeProps> = (props) => {
 
   // side effect filter mode & selected columns
   useEffect(() => {
+    let selectedColumnsTemp : TTableColumn = []
     // set selected columns
     if(selectedColumns?.length) {
       // use 'field' as key filter
-      setColumns(_.intersectionBy(initColumns, selectedColumns, 'field'))
+      selectedColumnsTemp = [..._.intersectionBy(initColumns, selectedColumns, 'field')]
     }
 
     // set filter input and sort button
-    const showInputFilter : TTableColumn = columns.map((item: any, index: number) => {
+    const showInputFilter : TTableColumn = selectedColumnsTemp.map((item: any, index: number) => {
       return {
         ...item,
         sortable: false,
@@ -77,14 +90,14 @@ const DataGridTableFree : React.FC<IDataGridTableFreeProps> = (props) => {
         )
       }
     })
-    setColumns(showInputFilter)
+    setColumns([...showInputFilter])
 
     // if modeFilter false, reset all
     if(!modeFilter) {
       const resetDataFilters = {}
       setDataFilters && setDataFilters(resetDataFilters)
     }
-  }, [modeFilter, sortOn, sortModel])
+  }, [modeFilter, sortOn, sortModel, selectedColumns])
 
   // side effect filter
   useEffect(() => {

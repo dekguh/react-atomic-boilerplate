@@ -14,6 +14,7 @@ import type { BaseQueryFn, FetchArgs, FetchBaseQueryError } from '@reduxjs/toolk
 
 // UTILS
 import { getCookieJwt } from '@/utils/cookies'
+import Router from 'next/router'
 
 const baseQuery = fetchBaseQuery({
   baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL,
@@ -44,6 +45,7 @@ export const baseQueryWithRefreshToken : BaseQueryFn<
           // logout
           api.dispatch(userIsAuthAct(false))
           api.dispatch(userTokenAct(''))
+          Router.push('/sign-in')
         }
       } finally {
         release()

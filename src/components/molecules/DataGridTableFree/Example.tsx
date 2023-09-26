@@ -15,6 +15,12 @@ const Example = () => {
   const [pageSize, setPageSize] = React.useState<number>(5)
   const [sortOn, setSortOn] = React.useState<string>('')
   const [sortModel, setSortModel] = React.useState<'asc' | 'desc' | null>(null)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [selectedColumns, setSelectedColumns] = React.useState([
+    { field: 'name' },
+    { field: 'email' },
+    { field: 'country' }
+  ])
   
   const initColumns = [
     {
@@ -63,10 +69,7 @@ const Example = () => {
             { id: 5, name: 'i nyoman', country: 'surabaya', email: 'gmail' },
             { id: 6, name: 'ni nyoman', country: 'bali', email: 'hotmail' },
           ]}
-          selectedColumns={[
-            { field: 'name' },
-            { field: 'email' }
-          ]}
+          selectedColumns={selectedColumns}
           modeFilter={modeFilter}
           showSorting={true}
           dataFilters={dataFilters}
