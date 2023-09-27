@@ -50,7 +50,7 @@ const HomePage = () => {
         />
       </Stack>
 
-      {isLoading ? <Stack marginTop='20px'>
+      {isLoading ? <Stack marginTop='20px' data-testid='loadingId'>
         <Progress
           type='linear'
           linearProps={{
