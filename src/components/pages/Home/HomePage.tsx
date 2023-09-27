@@ -34,7 +34,7 @@ const HomePage = () => {
 
   return (
     <Stack padding='20px' height='100vh'>    
-      <Button variant='contained' onClick={() => {
+      <Button data-testid='btnSignOutId' variant='contained' onClick={() => {
         dispatch(userLogoutAct())
         Router.push('/sign-in')
       }}>
@@ -50,7 +50,7 @@ const HomePage = () => {
         />
       </Stack>
 
-      {isLoading ? <Stack marginTop='20px'>
+      {isLoading ? <Stack marginTop='20px' data-testid='loadingId'>
         <Progress
           type='linear'
           linearProps={{
