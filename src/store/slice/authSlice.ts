@@ -6,11 +6,13 @@ import { getCookieJwt, setCookieJwt } from '@/utils/cookies'
 export interface IAuthState {
   isAuth: boolean;
   token?: string | null;
+  isTokenValid: boolean;
 }
 
 export const initialState: IAuthState = {
   isAuth: getCookieJwt() ? true : false,
-  token: getCookieJwt() ?? ''
+  token: getCookieJwt() ?? '',
+  isTokenValid: false,
 }
 
 const hydrate = createAction<AppState>(HYDRATE)
@@ -30,6 +32,10 @@ export const authSlice = createSlice({
       setCookieJwt('')
       state.token = ''
       state.isAuth = false
+      state.isTokenValid = false
+    },
+    userTokenIsValid: (state, action : PayloadAction<boolean>) => {
+      state.isTokenValid = action.payload
     }
   },
   extraReducers: builder => {
@@ -42,6 +48,6 @@ export const authSlice = createSlice({
   },
 })
 
-export const { userIsAuthAct, userLogoutAct, userTokenAct } = authSlice.actions
+export const { userIsAuthAct, userLogoutAct, userTokenAct, userTokenIsValid } = authSlice.actions
 export const selectAuthState = (state: AppState) => state.auth
 export default authSlice.reducer
