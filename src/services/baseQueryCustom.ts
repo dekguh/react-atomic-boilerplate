@@ -8,7 +8,7 @@
 import { Mutex } from 'async-mutex'
 
 // REDUX
-import { userIsAuthAct, userTokenAct } from '@/store/slice/authSlice'
+import { userIsAuthAct, userTokenAct, userTokenIsValid } from '@/store/slice/authSlice'
 import { fetchBaseQuery } from '@reduxjs/toolkit/query'
 import type { BaseQueryFn, FetchArgs, FetchBaseQueryError } from '@reduxjs/toolkit/query'
 
@@ -32,6 +32,8 @@ export const baseQueryWithRefreshToken : BaseQueryFn<
   await mutex.waitForUnlock()
   let responseResult = await baseQuery(args, api, extraOptions)
   if (responseResult.error && responseResult.error.status === 401) {
+    api.dispatch(userTokenIsValid(false))
+
     if (!mutex.isLocked()) {
       const release = await mutex.acquire()
 
@@ -41,6 +43,7 @@ export const baseQueryWithRefreshToken : BaseQueryFn<
         if (responseRefreshToken) {
           // update token
           api.dispatch(userTokenAct('token'))
+          api.dispatch(userTokenIsValid(true))
         } else {
           // logout
           api.dispatch(userIsAuthAct(false))
@@ -54,6 +57,8 @@ export const baseQueryWithRefreshToken : BaseQueryFn<
       await mutex.waitForUnlock()
       responseResult = await baseQuery(args, api, extraOptions)
     }
+  } else {
+    api.dispatch(userTokenIsValid(true))
   }
 
   return responseResult

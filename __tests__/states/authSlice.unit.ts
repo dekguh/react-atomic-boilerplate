@@ -1,4 +1,4 @@
-import authReducer, { IAuthState, initialState, userIsAuthAct, userTokenAct } from '@/store/slice/authSlice'
+import authReducer, { IAuthState, initialState, userIsAuthAct, userTokenAct, userTokenIsValid } from '@/store/slice/authSlice'
 
 describe('authReducer unit testing', () => {
   test('should return initial state', () => {
@@ -18,6 +18,14 @@ describe('authReducer unit testing', () => {
     expect(authReducer(previousState, userTokenAct('token'))).toEqual({
       ...initialState,
       token: 'token'
+    })
+  })
+
+  test('action userTokenIsValid', () => {
+    const previousState : IAuthState = initialState
+    expect(authReducer(previousState, userTokenIsValid(true))).toEqual({
+      ...initialState,
+      isTokenValid: true
     })
   })
 })
