@@ -20,8 +20,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install and build
         run: |
-          npm install conventional-changelog-conventionalcommits
-          npm install commitlint@latest
+          npm install -g conventional-changelog-conventionalcommits
+          npm install -g commitlint@latest
           npm ci
           npm run build --if-present
 
