@@ -1,5 +1,9 @@
 name: linting and unit testing
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 jobs:
   build_test:
     runs-on: ubuntu-latest
