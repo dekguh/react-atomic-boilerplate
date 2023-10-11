@@ -1,38 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Stack Technology
 
-## Getting Started
+- [Next JS](https://nextjs.org/)
+- [Storybook](https://storybook.js.org/)
+- [Material UI](https://mui.com/)
+- [Redux](https://redux.js.org/)
+- [Next Redux Wrapper](https://github.com/kirill-konshin/next-redux-wrapper)
+- [RTK Query](https://redux-toolkit.js.org/rtk-query/overview)
+- [Eslint](https://eslint.org/)
+- [Axios](https://github.com/axios/axios)
+- [TSS React](https://www.tss-react.dev/)
+- [Jest](https://jestjs.io/docs/)
+- [Playwright](https://playwright.dev/)
+- [Commitlint](https://commitlint.js.org/)
+- [Husky](https://typicode.github.io/husky/)
 
-First, run the development server:
+## Architecture Folder
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+a combination of next js structure with atomic pattern structure for UI.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Atomic Pattern
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+learn more about atomic pattern architecture on [here](https://paulonteri.com/thoughts/atomic-design-react).
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## What Includes in This Boilerplate?
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- UI docs using storybook
+- unit testing and integration testing using jest
+- e2e testing using playwright
+- atomic pattern UI
+- Redux and RTK Query as state and fetching data management
+- commit lint using commitlint
+- code lint using eslint
+- CI workflows code lint
+- CI workflows unit testing and integration testing
+- CI workflows e2e testing
